@@ -332,11 +332,19 @@ export default {
     },
     handleAnimeTableSizeChange(val) {
       this.animePage.pageSize = val;
-      this.requestGetAminePage();
+      if (this.nowSelectRssFeed == 0) {
+        this.requestGetAminePage();
+      } else {
+        this.requestGetOneFeedAnimePage();
+      }
     },
     handleAnimeTableCurrentChange(val) {
       this.animePage.pageNum = val;
-      this.requestGetAminePage();
+      if (this.nowSelectRssFeed == 0) {
+        this.requestGetAminePage();
+      } else {
+        this.requestGetOneFeedAnimePage();
+      }
     },
   },
 };
