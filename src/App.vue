@@ -1,30 +1,38 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <el-container>
+      <el-header>
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          @select="handleSelect"
+          :router="enableRouter"
+        >
+          <el-menu-item index="/">动画列表</el-menu-item>
+          <el-menu-item index="RssFeed">RSS订阅设置</el-menu-item>
+        </el-menu>
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
-  <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+export default {
+  setup() {},
+  data() {
+    return {
+      activeIndex: "/",
+      enableRouter: true,
+    };
+  },
+  methods: {
+    handleSelect(key) {
+      this.activeIndex = key;
+    },
+  },
+};
+</script>
