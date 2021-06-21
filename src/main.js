@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import 'element-plus/lib/theme-chalk/index.css';
-import 'element-plus/lib/theme-chalk/display.css';
+import './assets/display.css';
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import 'dayjs/locale/zh-cn'
 import locale from 'element-plus/lib/locale'
